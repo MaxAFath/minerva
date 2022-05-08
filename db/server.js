@@ -17,6 +17,11 @@ app.get('/api/notes:id', (req,res) =>{
     res.json(result);
 });
 
-app.listen(PORT, () => {
+app.post('/api/notes', (req,res) => {
+    
+    res.json(req.body);
+});
 
+app.listen(PORT, () => {
+    
 });

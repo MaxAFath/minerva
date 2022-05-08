@@ -4,8 +4,16 @@ const PORT = process.env.PORT || 3002;
 
 const app = express();
 
-app.get('/api/db:id', (req,res) =>{
-    const result = 
+app.get('/api/notes', (req, res) => {
+    let results = notes;
+    if(req.query){
+        results = filterByQuery(req.query, results);
+    }
+    res.json(results);
+})
+
+app.get('/api/notes:id', (req,res) =>{
+    const result = findById(req.params.id, db)
     res.json(result);
 });
 

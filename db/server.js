@@ -12,12 +12,12 @@ app.get('/api/notes', (req, res) => {
     res.json(results);
 })
 
-app.get('/api/notes:id', (req,res) =>{
+app.get('/public/api/notes:id', (req,res) =>{
     const result = findById(req.params.id, db)
     res.json(result);
 });
 
-app.post('/api/notes', (req,res) => {
+app.post('/public/api/notes', (req,res) => {
     
     res.json(req.body);
 });
